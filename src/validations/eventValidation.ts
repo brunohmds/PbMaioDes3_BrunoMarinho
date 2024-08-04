@@ -2,11 +2,11 @@ import joi from 'joi';
 import { dayOfWeek } from 'src/enums/dayOfWeek';
 
 const eventSchema = joi.object({
-  description: joi.string().min(1).required().messages({
+  description: joi.string().min(2).required().messages({
     'string.base': 'Texto inválido. Digite apenas caracteres.',
     'string.empty':
       'Texto em branco. Por favor, digite uma descrição para o evento.',
-    'string.min': 'A descrição do evento deve ter no mínimo 1 caractere.',
+    'string.min': 'A descrição do evento deve ter no mínimo 2 caracteres.',
     'any.required': 'A descrição do evento é obrigatória.',
   }),
   dayOfWeek: joi
