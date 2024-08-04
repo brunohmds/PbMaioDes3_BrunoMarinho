@@ -25,7 +25,6 @@ const userSchema: Schema = new Schema({
     unique: true,
   },
   password: { type: String, required: true },
-  confirmPassword: { type: String, required: true },
 });
 
 // Funcion to hash user password
