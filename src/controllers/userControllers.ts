@@ -16,14 +16,16 @@ if (!jwtSecret || typeof jwtSecret !== 'string') {
 
 export default class userController {
   static async signUp(req: Request, res: Response) {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const birthDate = req.body.birthDate;
-    const city = req.body.city;
-    const country = req.body.country;
-    const email = req.body.email;
-    const password = req.body.password;
-    const confirmPassword = req.body.confirmPassword;
+    const {
+      firstName,
+      lastName,
+      birthDate,
+      city,
+      country,
+      email,
+      password,
+      confirmPassword,
+    } = req.body;
 
     if (password !== confirmPassword) {
       return res
@@ -32,8 +34,6 @@ export default class userController {
     }
 
     try {
-      const hashPassword = await bcrypt.hash(password, 10);
-
       const user = new User({
         firstName,
         lastName,
@@ -41,7 +41,7 @@ export default class userController {
         city,
         country,
         email,
-        password: hashPassword,
+        password,
       });
 
       await user.save();
@@ -54,8 +54,7 @@ export default class userController {
   }
 
   static async signIn(req: Request, res: Response) {
-    const email = req.body.email;
-    const password = req.body.password;
+    const { email, password } = req.body;
 
     try {
       const user = await User.findOne({ email });

@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 
-interface userInterface extends Document {
+interface UserInterface extends Document {
   firstName: string;
   lastName: string;
   birthDate: Date;
@@ -19,20 +19,15 @@ const userSchema: Schema = new Schema({
   birthDate: { type: Date, required: true },
   city: { type: String, required: true },
   country: { type: String, required: true },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
 });
 
-// Funcion to hash user password
-userSchema.pre<userInterface>('save', async function (next) {
+// Middleware to hash password
+userSchema.pre<UserInterface>('save', async function (next) {
   if (this.isModified('password')) {
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
-    this.confirmPassword = undefined;
   }
   next();
 });
@@ -43,6 +38,6 @@ userSchema.methods.comparePassword = async function (
   return bcrypt.compare(candidatePassword, this.password);
 };
 
-const User = mongoose.model<userInterface>('User', userSchema);
+const User = mongoose.model<UserInterface>('User', userSchema);
 
 export default User;
