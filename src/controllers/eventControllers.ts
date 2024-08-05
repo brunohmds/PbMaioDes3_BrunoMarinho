@@ -17,9 +17,7 @@ export default class eventController {
       await event.save();
       res.status(201).json({ message: 'Evento cadastrado com sucesso.' });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao criar o evento. Confira:', error });
+      res.status(500).json({ message: 'Erro ao criar o evento.' });
     }
   }
 
@@ -28,9 +26,7 @@ export default class eventController {
       const events = await Event.find();
       res.status(200).json({ events });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao obter lista de eventos. Confira:', error });
+      res.status(500).json({ message: 'Erro ao obter lista de eventos. ' });
     }
   }
 
@@ -48,12 +44,10 @@ export default class eventController {
 
       await Event.deleteMany({ dayOfWeek });
       res.status(200).json({
-        message: `Eventos do dia ${dayOfWeek} deletados com sucesso.`,
+        message: 'Eventos do dia deletados com sucesso.',
       });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao deletar eventos. Confira:', error });
+      res.status(500).json({ message: 'Erro ao deletar eventos.' });
     }
   }
 
@@ -69,9 +63,7 @@ export default class eventController {
 
       res.status(200).json({ event: eventById });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao procurar evento. Confira:', error });
+      res.status(500).json({ message: 'Erro ao procurar evento.' });
     }
   }
 
@@ -88,9 +80,7 @@ export default class eventController {
       await Event.deleteOne({ _id: eventId });
       res.status(200).json({ message: 'Evento deletado com sucesso.' });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao deletar evento. Confira:', error });
+      res.status(500).json({ message: 'Erro ao deletar evento.' });
     }
   }
 }

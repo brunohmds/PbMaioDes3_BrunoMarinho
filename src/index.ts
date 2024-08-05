@@ -17,3 +17,5 @@ app.use(eventRoutes);
 app.listen(PORT, () => {
   console.log(`Running server on port: ${PORT}`);
 });
+
+export default app;

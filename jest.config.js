@@ -9,4 +9,7 @@ module.exports = {
     '^src/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: ['**/src/tests/**/*.test.ts'],
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov'],
 };
