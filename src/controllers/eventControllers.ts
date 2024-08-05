@@ -1,4 +1,4 @@
-import Event from 'src/models/event';
+import Event from '../models/event';
 import { Request, Response } from 'express';
 import { JwtPayload } from 'jsonwebtoken';
 

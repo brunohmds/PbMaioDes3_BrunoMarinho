@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import eventController from 'src/controllers/eventControllers';
-import { authenticateJWT } from 'src/middlewares/jwtAuthenticator';
+import eventController from '../controllers/eventControllers';
+import { authenticateJWT } from '../middlewares/jwtAuthenticator';
 
 const router = Router();
 

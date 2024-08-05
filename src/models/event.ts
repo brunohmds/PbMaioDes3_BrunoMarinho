@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { dayOfWeek } from 'src/enums/dayOfWeek';
+import { dayOfWeek } from '../enums/dayOfWeek';
 
 interface eventInterface extends Document {
   description: string;
