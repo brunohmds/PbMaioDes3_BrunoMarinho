@@ -3,6 +3,7 @@ import './db/conn';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes';
 import eventRoutes from './routes/eventRoutes';
+import setupSwagger from './config/swagger';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
+setupSwagger(app);
 app.use(userRoutes);
 app.use(eventRoutes);
 

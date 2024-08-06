@@ -47,9 +47,7 @@ export default class userController {
       await user.save();
       res.status(201).json({ message: 'Usuário criado com sucesso.' });
     } catch (error) {
-      res
-        .status(500)
-        .json({ message: 'Erro ao criar o usuário. Confira:', error });
+      res.status(500).json({ message: 'Erro ao criar o usuário. Confira:' });
     }
   }
 
@@ -75,7 +73,7 @@ export default class userController {
 
       res.status(200).json({ token });
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao autenticar o usuário.', error });
+      res.status(500).json({ message: 'Erro ao autenticar o usuário.' });
     }
   }
 }
