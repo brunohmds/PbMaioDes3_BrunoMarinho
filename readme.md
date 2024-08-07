@@ -38,11 +38,10 @@ Como parte do desafio, também existe a integração com serviços AWS.
 
 3. **Configure as variáveis de ambiente**
 
-   JWT_SECRET=sua_chave_secreta
-   AWS_ACCESS_KEY_ID=sua_chave_de_acesso
-   AWS_SECRET_ACCESS_KEY=sua_chave_secreta
-   AWS_REGION=sua_regiao
-   S3_BUCKET=sua_bucket
+   - JWT_SECRET=sua_chave_secreta
+   - AWS_ACCESS_KEY_ID=sua_chave_de_acesso
+   - AWS_REGION=sua_regiao
+   - S3_BUCKET=sua_bucket
 
 4. **Inicialize o banco de dados**
 
@@ -54,12 +53,14 @@ Como parte do desafio, também existe a integração com serviços AWS.
 
 ## EndPoints
 
-    A documentação completa da API pode ser acessada através do Swagger. Após iniciar a aplicação, você pode visualizar a documentação dos endpoints acessando o seguinte endereço:
+    A documentação completa da API pode ser acessada através do Swagger.
+    Após iniciar a aplicação, você pode visualizar a documentação dos endpoints acessando o seguinte endereço:
 
     http://localhost:3000/api-docs
 
 ## Integração com serviços AWS
 
-    A API pode ser executada em uma instância EC2 da AWS. Certifique-se de configurar as regras de segurança e o grupo de segurança para permitir o tráfego nas portas necessárias.
+    A API pode ser executada em uma instância EC2 da AWS.
+    Certifique-se de configurar as regras de segurança e o grupo de segurança para permitir o tráfego nas portas necessárias.
 
     Após realizar as configurações citadas, siga os 5 passos anteriormente citados para rodar a API localmente.
