@@ -14,7 +14,7 @@ it('Should create a new event', async () => {
   await Event.deleteMany({});
   const eventData = {
     description: 'Music Concert',
-    dayOfWeek: dayOfWeek.SATURDAY,
+    dayOfWeek: dayOfWeek.SABADO,
     userId: new mongoose.Types.ObjectId(),
   };
 
@@ -32,7 +32,7 @@ it('Should create a new event', async () => {
 it('Should not create an event without a description', async () => {
   await Event.deleteMany({});
   const eventData = {
-    dayOfWeek: dayOfWeek.MONDAY,
+    dayOfWeek: dayOfWeek.SEGUNDAFEIRA,
   };
 
   const event = new Event(eventData);
@@ -72,7 +72,7 @@ it('Should create an event without userId', async () => {
   await Event.deleteMany({});
   const eventData = {
     description: 'Art Exhibition',
-    dayOfWeek: dayOfWeek.FRIDAY,
+    dayOfWeek: dayOfWeek.SEXTAFEIRA,
   };
 
   const event = new Event(eventData);
@@ -83,5 +83,5 @@ it('Should create an event without userId', async () => {
   expect(foundEvent).toBeTruthy();
   expect(foundEvent?.description).toBe(eventData.description);
   expect(foundEvent?.dayOfWeek).toBe(eventData.dayOfWeek);
-  expect(foundEvent?.userId).toBeUndefined(); // userId should be optional
+  expect(foundEvent?.userId).toBeUndefined();
 });

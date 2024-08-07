@@ -17,7 +17,7 @@ const eventSchema = joi.object({
       'string.base': 'Texto inválido. Digite apenas letras.',
       'string.empty': 'Texto em branco. Por favor, digite o dia da semana.',
       'any.only':
-        'O dia da semana deve ser um dos valores válidos: sunday, monday, tuesday, wednesday, thursday, friday, saturday.',
+        'O dia da semana deve ser um dos valores válidos: Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado.',
       'any.required': 'O dia da semana é obrigatório.',
     }),
   userId: joi.string().hex().length(24).optional().messages({

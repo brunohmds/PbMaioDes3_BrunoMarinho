@@ -4,7 +4,7 @@ import { validateEvent } from 'src/validations/eventValidation';
 test('Should return validation error for description as non-string', () => {
   const invalidEventData = {
     description: 133333,
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: '123456789012345678901234',
   };
 
@@ -36,7 +36,7 @@ test('Should return validation error for description as non-string', () => {
 test('Should return validation error for empty description', () => {
   const invalidEventData = {
     description: '',
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: '123456789012345678901234',
   };
 
@@ -69,7 +69,7 @@ test('Should return validation error for empty description', () => {
 test('Should return validation error for description with less than 2 characters', () => {
   const invalidEventData = {
     description: 'A',
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: '123456789012345678901234',
   };
 
@@ -100,7 +100,7 @@ test('Should return validation error for description with less than 2 characters
 
 test('Should return validation error for missing description', () => {
   const invalidEventData = {
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: '123456789012345678901234',
   };
 
@@ -154,7 +154,7 @@ test('Should return validation error for dayOfWeek as non-string', () => {
         {
           resource: 'dayOfWeek',
           message:
-            'O dia da semana deve ser um dos valores válidos: sunday, monday, tuesday, wednesday, thursday, friday, saturday.',
+            'O dia da semana deve ser um dos valores válidos: Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado.',
         },
         {
           resource: 'dayOfWeek',
@@ -191,7 +191,7 @@ test('Should return validation error for empty dayOfWeek', () => {
         {
           resource: 'dayOfWeek',
           message:
-            'O dia da semana deve ser um dos valores válidos: sunday, monday, tuesday, wednesday, thursday, friday, saturday.',
+            'O dia da semana deve ser um dos valores válidos: Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado.',
         },
         {
           resource: 'dayOfWeek',
@@ -228,7 +228,7 @@ test('Should return validation error for invalid dayOfWeek', () => {
         {
           resource: 'dayOfWeek',
           message:
-            'O dia da semana deve ser um dos valores válidos: sunday, monday, tuesday, wednesday, thursday, friday, saturday.',
+            'O dia da semana deve ser um dos valores válidos: Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado.',
         },
       ],
     });
@@ -272,7 +272,7 @@ test('Should return validation error for missing dayOfWeek', () => {
 test('Should return validation error for userId as non-string', () => {
   const invalidEventData = {
     description: 'Event Description',
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: 1234567890,
   };
 
@@ -304,7 +304,7 @@ test('Should return validation error for userId as non-string', () => {
 test('Should return validation error for invalid userId format', () => {
   const invalidEventData = {
     description: 'Event Description',
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: 'invalidUserId',
   };
 
@@ -340,7 +340,7 @@ test('Should return validation error for invalid userId format', () => {
 test('Should return validation error for userId with invalid length', () => {
   const invalidEventData = {
     description: 'Event Description',
-    dayOfWeek: 'monday',
+    dayOfWeek: 'Segunda-feira',
     userId: '1234567890',
   };
 

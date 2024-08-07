@@ -29,7 +29,7 @@ const setupSwagger = (app: Express) => {
         },
       ],
     },
-    apis: ['./src/routes/*.ts'], // Certifique-se de que este caminho está correto
+    apis: ['./src/routes/*.ts'],
   };
 
   const swaggerSpec = swaggerJSDoc(options);

@@ -1,5 +1,3 @@
-// src/tests/userModel.test.ts
-
 import mongoose from 'mongoose';
 import User from '../models/user';
 
@@ -11,7 +9,7 @@ afterAll(async () => {
   await mongoose.connection.close();
 });
 
-it('should hash the password before saving the user', async () => {
+it('Should hash the password before saving the user', async () => {
   await User.deleteMany({});
 
   const user = new User({
@@ -32,7 +30,7 @@ it('should hash the password before saving the user', async () => {
   expect(savedUser!.password).not.toBe('password');
 });
 
-it('should compare passwords correctly', async () => {
+it('Should compare passwords correctly', async () => {
   await User.deleteMany({});
 
   const user = new User({
