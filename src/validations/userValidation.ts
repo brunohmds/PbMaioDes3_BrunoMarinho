@@ -1,16 +1,16 @@
 import joi from 'joi';
 
 const userSchema = joi.object({
-  firstName: joi.string().min(5).required().messages({
+  firstName: joi.string().min(2).required().messages({
     'string.base': 'Texto inválido. Digite apenas letras.',
     'string.empty': 'Texto em branco. Por favor, digite seu nome.',
-    'string.min': 'O nome deve ter no mínimo cinco caracteres.',
+    'string.min': 'O nome deve ter no mínimo dois caracteres.',
     'any.required': 'O primeiro nome é obrigatório.',
   }),
-  lastName: joi.string().min(5).required().messages({
+  lastName: joi.string().min(2).required().messages({
     'string.base': 'Texto inválido. Digite apenas letras.',
     'string.empty': 'Texto em branco. Por favor, digite seu sobrenome.',
-    'string.min': 'O sobrenome deve ter no mínimo cinco caracteres.',
+    'string.min': 'O sobrenome deve ter no mínimo dois caracteres.',
     'any.required': 'O sobrenome é obrigatório.',
   }),
   birthDate: joi.date().iso().required().messages({

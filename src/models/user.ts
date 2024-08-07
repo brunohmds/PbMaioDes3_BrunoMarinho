@@ -14,8 +14,8 @@ interface UserInterface extends Document {
 }
 
 const userSchema: Schema = new Schema({
-  firstName: { type: String, required: true, minlength: 5 },
-  lastName: { type: String, required: true, minlength: 5 },
+  firstName: { type: String, required: true, minlength: 2 },
+  lastName: { type: String, required: true, minlength: 2 },
   birthDate: { type: Date, required: true },
   city: { type: String, required: true },
   country: { type: String, required: true },

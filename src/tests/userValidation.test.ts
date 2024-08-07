@@ -79,9 +79,9 @@ test('Should return validation error for empty firstName', () => {
   }
 });
 
-test('Should return validation error for firstName with less than 5 characters', () => {
+test('Should return validation error for firstName with less than 2 characters', () => {
   const invalidUserData = {
-    firstName: 'Brun',
+    firstName: 'B',
     lastName: 'Marinho',
     email: 'bruno.marinho@example.com',
     birthDate: '1994-03-21',
@@ -109,7 +109,7 @@ test('Should return validation error for firstName with less than 5 characters',
       errors: [
         {
           resource: 'firstName',
-          message: 'O nome deve ter no mínimo cinco caracteres.',
+          message: 'O nome deve ter no mínimo dois caracteres.',
         },
       ],
     });
@@ -235,10 +235,10 @@ test('Should return validation error for empty lastName', () => {
   }
 });
 
-test('Should return validation error for lastName with less than 5 characters', () => {
+test('Should return validation error for lastName with less than 2 characters', () => {
   const invalidUserData = {
     firstName: 'Bruno',
-    lastName: 'Mar',
+    lastName: 'M',
     email: 'bruno.marinho@example.com',
     birthDate: '1994-03-21',
     city: 'João Pessoa',
@@ -265,7 +265,7 @@ test('Should return validation error for lastName with less than 5 characters', 
       errors: [
         {
           resource: 'lastName',
-          message: 'O sobrenome deve ter no mínimo cinco caracteres.',
+          message: 'O sobrenome deve ter no mínimo dois caracteres.',
         },
       ],
     });
