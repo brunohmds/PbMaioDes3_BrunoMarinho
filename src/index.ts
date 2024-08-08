@@ -14,9 +14,9 @@ const PORT = 3000;
 app.use(express.json());
 
 setupSwagger(app);
-app.use('/users', userRoutes);
-app.use('/events', eventRoutes);
-app.use('/upload', uploadRoutes);
+app.use(userRoutes);
+app.use(eventRoutes);
+app.use(uploadRoutes);
 
 app.listen(PORT, () => {
   console.log(`Rodando servidor na porta: ${PORT}`);

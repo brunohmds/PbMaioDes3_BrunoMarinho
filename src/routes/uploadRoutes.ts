@@ -3,6 +3,6 @@ import { generateUploadURL } from '../controllers/uploadControllers';
 
 const router = express.Router();
 
-router.get('/generate-upload-url', generateUploadURL);
+router.get('/upload/generate-upload-url', generateUploadURL);
 
 export default router;
